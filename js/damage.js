@@ -245,7 +245,7 @@ function getDamageResult(attacker, defender, move, field) {
             basePower = (field.terrain === "Electric" || field.terrain === "Grassy") ? 90 : (field.terrain === "Misty") ? 95 : 80;
             break;
         case "Venoshock":
-            basePower = move.bp * (defender.status == "Poisoned" ? 2 : 1);
+            basePower = move.bp * (defender.status == "Poisoned" || defender.status == "Badly Poisoned" ? 2 : 1);
             description.moveBP = basePower;
             break;
         default:
